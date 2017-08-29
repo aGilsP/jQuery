@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <link ref="stylesheet" href="main.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button id="ajax">ajax call</button>
+    <button id="json">json</button>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td id="tr1">Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        $('#json').click(function() {
+            //alert('json');
+            $.getJSON("http://rest-service.guides.spring.io/greeting",
+                function(data) {
+                    alert(data.content);
+                });
+        });
+
+        $('#ajax').click(function() {
+            //alert('ajax');
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "http://rest-service.guides.spring.io/greeting",
+                success: function(data) {
+                    alert(data.id);
+                }
+            });
+        });
+
+        $('#tr1').click(function() {
+            //alert('ajax');
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "http://rest-service.guides.spring.io/greeting",
+                success: function(data) {
+                    alert(data.id);
+                }
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

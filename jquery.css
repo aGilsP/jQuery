@@ -1,0 +1,12 @@
+table {
+    align-content: center;
+    border: 15px solid black;
+}
+
+td,
+th,
+tr {
+    align-content: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 15px solid orange;
+}
